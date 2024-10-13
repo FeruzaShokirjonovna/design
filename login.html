@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Login | D-sign{% endblock %}
+
+{% block content %}
+<!--Login page-->
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <h1 class="text-center">Kirish</h1>
+        <form method="POST" class="mt-4">
+            {% csrf_token %}
+            <div class="form-group mb-3">
+                <label for="email">Email</label>
+                <input type="email" name="email" class="form-control" id="email" required>
+            </div>
+            <div class="form-group mb-3">
+                <label for="password">Parol</label>
+                <input type="password" name="password" class="form-control" id="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Kirish</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
