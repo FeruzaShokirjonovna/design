@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Savat | D-sign{% endblock %}
+
+{% block content %}
+<!-- Shopping cart page-->
+<h1 class="text-center mb-5">Sizning Savatingiz</h1>
+<div class="row">
+    <div class="col-md-8">
+        <ul class="list-group mb-3">
+            {% for item in cart_items %}
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+                <div>
+                    <h6 class="my-0">{{ item.product.name }}</h6>
+                    <small class="text-muted">Miqdor: {{ item.quantity }}</small>
+                </div>
+                <span class="text-muted">${{ item.product.price }}</span>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col-md-4">
+        <h4>Jami: ${{ cart_total }}</h4>
+        <a href="/checkout" class="btn btn-primary w-100">To'lovga o'tish</a>
+    </div>
+</div>
+{% endblock %}
