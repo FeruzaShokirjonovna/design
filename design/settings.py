@@ -1,3 +1,7 @@
+import os
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'products/static']
 
@@ -16,3 +20,5 @@ TEMPLATES = [
         },
     },
 ]
+
+ALLOWED_HOSTS = ['*']  # This allows connections from any host (not recommended for production)
